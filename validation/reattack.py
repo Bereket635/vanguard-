@@ -1,11 +1,3 @@
-"""Two ways to confirm a finding is real.
-
-graph_verify() checks the in-memory graph. Runs everywhere. Doesn't need
-credentials or a live AD. This is what the pipeline uses by default.
-
-run_real() shells out to Impacket. Only called when the user supplies
-credentials explicitly. Captures stdout and exit code as evidence.
-"""
 import shlex
 import subprocess
 from dataclasses import dataclass, asdict
