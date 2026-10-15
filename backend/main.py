@@ -1,5 +1,3 @@
-"""FastAPI entry point. Two things: serve the dashboard, accept an upload
-and run the pipeline. No demo endpoint."""
 import json
 import traceback
 
