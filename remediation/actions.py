@@ -1,7 +1,5 @@
 from dataclasses import dataclass, field
 
-
-
 @dataclass
 class ActionResult:
     kind: str
