@@ -1,6 +1,3 @@
-"""The vocabulary. Every other module imports from here so we don't end up
-with three different spellings of "MemberOf" floating around."""
-
 USER = "User"
 GROUP = "Group"
 COMPUTER = "Computer"
@@ -27,8 +24,7 @@ def normalize_kind(raw):
     return table.get(str(raw or "").strip().lower(), UNKNOWN)
 
 
-# These are the group names that mark a Tier-0 target. They're fixed in
-# AD itself, so we compare exactly, uppercase.
+
 PRIVILEGED_NAMES = {
     "DOMAIN ADMINS", "ENTERPRISE ADMINS", "SCHEMA ADMINS",
     "ADMINISTRATORS", "DOMAIN CONTROLLERS",
