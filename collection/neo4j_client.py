@@ -1,10 +1,3 @@
-"""Neo4j wrapper. Nothing else in the codebase imports the neo4j driver
-directly - it all goes through here.
-
-The pipeline is designed to work without Neo4j: if the connection fails,
-is_available() returns False and the caller falls back to the in-memory
-graph. That's why the demo works even if the container is still booting.
-"""
 import os
 
 try:
