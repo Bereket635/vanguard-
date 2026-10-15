@@ -9,11 +9,7 @@ def _adjacency(edges):
 
 
 def find_paths_to_targets(graph, start_ids, target_ids, max_hops=8, max_paths_per_start=5):
-    """Return a list of finding dicts, one per path. Each dict has
-    start/target ids, the node and edge sequences, and the hop count.
-
-    max_paths_per_start bounds the search - without it, a graph with a
-    thousand users and a common intermediate group can explode."""
+    
     if not start_ids or not target_ids:
         return []
 
@@ -46,8 +42,7 @@ def find_paths_to_targets(graph, start_ids, target_ids, max_hops=8, max_paths_pe
                 continue
 
             for e in adj.get(cur, []):
-                # Skip cycles. A path that revisits a node isn't a real
-                # attack path, it's the graph being weird.
+                
                 if e["target"] in path:
                     continue
                 queue.append((e["target"], path + [e["target"]], edges + [e]))
