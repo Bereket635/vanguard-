@@ -10,9 +10,7 @@ NODE_KINDS = {USER, GROUP, COMPUTER, GPO, OU, DOMAIN, UNKNOWN}
 
 
 def normalize_kind(raw):
-    """SharpHound uses 'user'/'group'/'computer'; Vanguard uses title case.
-    Anything we don't recognize becomes Unknown so it doesn't get treated
-    as a start or target by the analyzer."""
+    
     table = {
         "user": USER, "users": USER, "person": USER,
         "group": GROUP, "groups": GROUP,
