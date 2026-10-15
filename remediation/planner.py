@@ -1,9 +1,3 @@
-"""Write the PowerShell apply and rollback files.
-
-Nothing here executes anything. It fills in the templates from decision.py
-and writes two .ps1 files to disk. A human reviews them and runs them on a
-domain host.
-"""
 from datetime import datetime, timezone
 from pathlib import Path
 
