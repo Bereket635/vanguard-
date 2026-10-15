@@ -1,5 +1,3 @@
-"""Assemble the API response. This is the shape the UI renders - if you
-change it, change the JS too."""
 from datetime import datetime, timezone
 
 
