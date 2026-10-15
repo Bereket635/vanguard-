@@ -1,10 +1,5 @@
-"""Apply a fix to the in-memory graph.
-
-This is the simulated half of Stage 4. It removes the edges that the chosen
-fix would remove in a real AD, so Stage 5 can re-check whether the path
-still exists. It never touches AD.
-"""
 from dataclasses import dataclass, field
+
 
 
 @dataclass
