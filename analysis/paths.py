@@ -1,10 +1,3 @@
-"""BFS path enumeration. Kept small on purpose - all the interesting logic
-lives in scoring.py and decision.py.
-
-Breadth-first rather than depth-first because we want the shortest paths
-first. A 2-hop path to Domain Admins is more dangerous than a 7-hop one
-that ends at the same place.
-"""
 from collections import defaultdict, deque
 
 
