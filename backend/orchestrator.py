@@ -1,14 +1,3 @@
-"""The five stages, top to bottom.
-
-    scan     - parse the export, persist to neo4j if it's up
-    analyze  - enumerate paths to Tier-0, score, rank
-    fix      - pick a fix per finding, emit apply/rollback PS, simulate
-    reattack - confirm each path existed before the fix
-    verify   - confirm each path is gone after the fix
-
-This module never touches AD. It writes PowerShell to a directory and
-returns a report. A human reviews the scripts and runs them.
-"""
 import os
 from datetime import datetime, timezone
 from pathlib import Path
