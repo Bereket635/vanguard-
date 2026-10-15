@@ -1,13 +1,3 @@
-"""Path scoring for stage 2.
-
-The formula is:
-    score = avg_edge_weight * length_factor * tier_factor
-
-I picked the numbers by hand after running the lab export a few times.
-They're not tuned to any specific environment. If you deploy this
-somewhere real, expect to revisit them.
-"""
-
 WEIGHTS = {
     "GenericAll":          1.00,
     "GetChangesAll":       1.00,
