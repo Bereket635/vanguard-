@@ -1,9 +1,3 @@
-"""Pick a fix for each finding.
-
-Rules are ordered by how disruptive the fix is. Cheap fixes win.
-If two rules match the same finding, blast radius decides.
-"""
-
 BLAST = {"low": 1, "medium": 3, "high": 5}
 
 
