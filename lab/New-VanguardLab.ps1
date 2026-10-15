@@ -1,11 +1,8 @@
 <#
 .SYNOPSIS  Build the Vanguard test AD.
 .DESCRIPTION
-    Creates the users, groups, and intentional misconfigurations that give
-    the pipeline something to find. Run on a DC you own, as Domain Admin.
-    Idempotent - safe to re-run.
-.NOTES  Rename $MemberServer to whatever your member server is actually
-        called. Everything else works as-is.
+    Creates the users, groups, and intentional misconfigurations that give 
+.NOTES  Rename $MemberServer to whatever your member server is actually called. Everything else works as is.
 #>
 [CmdletBinding()]
 param(
