@@ -1,7 +1,5 @@
 #!/usr/bin/env python3
-"""Test runner. Python 3.14's unittest discover is pickier than it used to
-be about the top-level directory. This runs from the project root and sets
-everything up the way the tests expect."""
+
 import sys
 import unittest
 from pathlib import Path
