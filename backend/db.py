@@ -1,5 +1,3 @@
-"""SQLite metadata. Only run history lives here - the graph lives in Neo4j
-or in memory."""
 import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
