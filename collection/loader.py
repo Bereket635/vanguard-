@@ -1,11 +1,3 @@
-"""Read SharpHound output into the graph shape the rest of the pipeline
-expects: {"nodes": [...], "edges": [...], "notes": [...]}.
-
-SharpHound exports one JSON per object type, zipped together. Each entry
-has an ObjectIdentifier, a Properties block, and arrays like Members /
-Aces / Sessions with the actual relationships. This module is the only
-place that knows about that format.
-"""
 import io
 import json
 import zipfile
@@ -14,9 +6,6 @@ from pathlib import PurePosixPath
 from collection.schema import normalize_kind
 
 
-# BloodHound's relationship names don't line up 1:1 with ours. This map
-# converts. Anything not here is passed through as-is so we don't silently
-# drop unknown edges.
 _REL_MAP = {
     "memberof":            "MemberOf",
     "adminto":             "AdminTo",
@@ -81,8 +70,7 @@ def _edges_from(item, source_id):
                 out.append({"source": source_id, "target": str(target),
                             "relationship": "MemberOf"})
 
-    # Sessions: {"UserSID": "...", "ComputerSID": "..."} - direction is
-    # user -> computer because that's how the graph is queried.
+  
     for sess in item.get("Sessions") or []:
         if isinstance(sess, dict):
             user = sess.get("UserSID") or sess.get("User")
@@ -135,9 +123,7 @@ def _finalize(graph):
 
 
 def load_export(filename, raw):
-    """Main entry point. Accepts a .zip of SharpHound JSON, a single
-    SharpHound .json, or a Vanguard-native {"nodes":...,"edges":...}
-    file. Raises ValueError if it can't make sense of the input."""
+    
     graph = {"nodes": {}, "edges": [], "notes": []}
     suffix = PurePosixPath(filename).suffix.lower()
 
@@ -167,7 +153,7 @@ def load_export(filename, raw):
         except Exception as exc:
             raise ValueError("bad json: " + str(exc))
 
-        # Vanguard-native shape passes straight through.
+        # Vanguard native shape passes straight through.
         if isinstance(obj, dict) and "nodes" in obj and "edges" in obj:
             for n in obj["nodes"]:
                 nid = str(n.get("id") or n.get("name"))
