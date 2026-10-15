@@ -1,14 +1,5 @@
 #!/usr/bin/env python3
-"""Command-line interface.
 
-Runs the whole pipeline against a SharpHound export without Docker, Neo4j,
-or the web server.
-
-    python cli.py analyze export.zip
-    python cli.py decide  export.zip --out-dir plans/
-    python cli.py pipeline export.zip
-    python cli.py load     export.zip
-"""
 import argparse
 import json
 import sys
