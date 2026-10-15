@@ -45,8 +45,7 @@ def run(cypher, **params):
 
 
 def write_nodes(nodes):
-    """MERGE on id so re-uploading the same export doesn't duplicate.
-    Returns the count of nodes seen (not necessarily newly created)."""
+    
     if not nodes:
         return 0
     cypher = """
