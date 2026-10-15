@@ -1,8 +1,3 @@
-"""Append-only evidence log.
-
-Every verification, graph-based or real, gets written here. JSONL so it
-survives crashes and can be grepped.
-"""
 import json
 import os
 from datetime import datetime, timezone
