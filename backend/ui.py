@@ -1,8 +1,4 @@
-"""The whole dashboard as a string.
-
-Why inline HTML: no build step, no static folder, no CDN. Drop a .py file
-on the server and it works.
-"""
+#the dashboard
 
 INDEX_HTML = """<!doctype html>
 <html lang="en">
