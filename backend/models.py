@@ -1,5 +1,3 @@
-"""ORM model for a pipeline run. The reports are stored as JSON blobs
-because the schema changes more often than the run itself."""
 import json
 from datetime import datetime, timezone
 from sqlalchemy import Column, Integer, String, Text, DateTime
